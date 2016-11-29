@@ -5,7 +5,7 @@ namespace SeleniumTraining.Pages
 {
     public class LoginPage
     {
-        private readonly IWebDriver _driver;
+        private IWebDriver _driver;
 
         //Page objects POM
         [FindsBy(How = How.Id, Using = "loginform")]
@@ -15,7 +15,7 @@ namespace SeleniumTraining.Pages
         private IWebElement _dashboardScreen;
 
 
-        public LoginPage(IWebDriver driver)
+        protected void Init(IWebDriver driver)
         {
             _driver = driver;
             PageFactory.InitElements(_driver, this);

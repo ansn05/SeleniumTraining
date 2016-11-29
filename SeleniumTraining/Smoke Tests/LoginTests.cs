@@ -1,7 +1,5 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using SeleniumTraining;
 using SeleniumTraining.Pages;
 
 namespace SeleniumTraining
@@ -9,14 +7,11 @@ namespace SeleniumTraining
     [TestClass]
     public class LoginTests : LoginPage
     {
-        public LoginTests(IWebDriver driver) : base(driver)
-        {
-        }
-
         [TestInitialize]
         public void Init()
         {
             Driver.Initialize();
+            this.Init(Driver.Instance);
         }
 
         [TestMethod]
